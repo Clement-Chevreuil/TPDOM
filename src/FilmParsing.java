@@ -174,6 +174,7 @@ public class FilmParsing {
         XMLReader xmlReader = saxParser.getXMLReader();
         xmlReader.setContentHandler(new SAX());
         xmlReader.parse(new org.xml.sax.InputSource(".idea/dvd.xml"));
+         System.out.println("roro");
     }
 
 
