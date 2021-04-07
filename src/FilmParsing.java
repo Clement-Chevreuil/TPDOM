@@ -20,13 +20,13 @@ import java.io.IOException;
 
 public class FilmParsing {
 
-    public static void main(String[] args) throws Exception {
 
-        test();
+    public FilmParsing()
+    {
 
     }
 
-    public static void afficherDom() throws Exception
+    public void afficherDom() throws Exception
     {
         File f = new File(".idea/dvd.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -38,7 +38,7 @@ public class FilmParsing {
         StreamResult result = new StreamResult(System.out);
         transformer.transform(source, result);
     }
-    public static void acteurDVD() throws Exception
+    public void acteurDVD() throws Exception
     {
         File f = new File(".idea/dvd.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -53,7 +53,7 @@ public class FilmParsing {
             System.out.println(root.getElementsByTagName("lastName").item(i).getFirstChild().getNodeValue() + " " + root.getElementsByTagName("firstName").item(i).getFirstChild().getNodeValue() );
         }
     }
-    public static void rendreDVD() throws Exception
+    public void rendreDVD() throws Exception
     {
         File f = new File(".idea/dvd.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -69,7 +69,7 @@ public class FilmParsing {
         }
     }
 
-    public static void XPath() throws Exception
+    public void XPath() throws Exception
     {
         File f = new File(".idea/dvd.xml");
 
@@ -124,7 +124,7 @@ public class FilmParsing {
         }
 
     }
-    public static void ModificationDOM() throws Exception
+    public void ModificationDOM() throws Exception
     {
 
         File f = new File(".idea/dvd.xml");
@@ -159,14 +159,8 @@ public class FilmParsing {
         transform.transform(source, result);
 
     }
-    public static void test() throws Exception
+    public void SAX() throws Exception
     {
-        File f = new File(".idea/dvd.xml");
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(f);
-
-        Element root = document.getDocumentElement();
         SAXParserFactory spf = SAXParserFactory.newInstance();
         spf.setNamespaceAware(true);
         SAXParser saxParser = spf.newSAXParser();
@@ -174,7 +168,6 @@ public class FilmParsing {
         XMLReader xmlReader = saxParser.getXMLReader();
         xmlReader.setContentHandler(new SAX());
         xmlReader.parse(new org.xml.sax.InputSource(".idea/dvd.xml"));
-         System.out.println("roro");
     }
 
 
