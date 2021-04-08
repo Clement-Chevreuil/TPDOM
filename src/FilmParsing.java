@@ -92,11 +92,11 @@ public class FilmParsing {
         System.out.println(" ");
         System.out.println("Film loue");
         XPathFactory factory2 = XPathFactory.newInstance();
-        XPath xpath2 = factory1.newXPath();
+        XPath xpath2 = factory2.newXPath();
         String xpathStringFilmLoue = "//DVD[rent]//title";
 
 
-        XPathExpression exp2 = xpath.compile (xpathStringFilmLoue);
+        XPathExpression exp2 = xpath2.compile (xpathStringFilmLoue);
         NodeList result2 = (NodeList) exp2.evaluate(document, XPathConstants.NODESET);
 
         for (int i = 0; i < result2.getLength(); i++)
@@ -111,7 +111,7 @@ public class FilmParsing {
         String xpathStringFilmNbActeur = "//film";
 
 
-        XPathExpression exp3 = xpath.compile (xpathStringFilmNbActeur);
+        XPathExpression exp3 = xpath3.compile (xpathStringFilmNbActeur);
         NodeList result3 = (NodeList) exp3.evaluate(document, XPathConstants.NODESET);
 
         for (int i = 0; i < result3.getLength(); i++)
